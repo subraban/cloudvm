@@ -8,7 +8,7 @@ variable "device_name" {
 }
 variable "machine" {
   type        = string
-  default     = "n2-highmem-4"
+  default     = "e2-medium"
 }
 variable "name" {
   type        = string

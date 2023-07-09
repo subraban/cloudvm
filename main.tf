@@ -5,7 +5,7 @@ resource "google_compute_instance" "cloudvm1" {
   attached_disk {
     device_name = var.disk
     mode        = "READ_WRITE"
-    source      = "projects/groovy-karma-388506/zones/us-central1-a/disks/disk-1"
+    source      = "projects/groovy-karma-388506/zones/us-central1-a/disks/disk-3"
     }
   boot_disk {
     auto_delete = true

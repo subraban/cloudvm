@@ -23,7 +23,7 @@ resource "google_compute_instance" "cloudvm" {
     goog-ec-src = "vm_add-tf"
   }
 
-  machine_type = "e2-medium"
+  machine_type = var.machine
   name         = var.name
 
   network_interface {

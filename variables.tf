@@ -4,7 +4,7 @@ variable "service_account" {
 }
 variable "disk" {
   type        = string
-  default     = "disk-1"
+  default     = "disk-3"
 }
 variable "device_name" {
   type        = string

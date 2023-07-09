@@ -4,7 +4,7 @@ variable "disk_name" {
 }
 variable "device_name" {
   type        = string
-  default     = "sqlserver"
+  default     = "cloudvm"
 }
 variable "machine" {
   type        = string

@@ -1,6 +1,6 @@
-variable "disk_name" {
+variable "service_account" {
   type        = string
-  default     = "disk-2"
+  default     = "101674418114-compute@developer.gserviceaccount.com"
 }
 variable "device_name" {
   type        = string

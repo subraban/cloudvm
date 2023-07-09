@@ -4,11 +4,11 @@ variable "service_account" {
 }
 variable "disk" {
   type        = string
-  default     = "disk-2"
+  default     = "disk-1"
 }
 variable "device_name" {
   type        = string
-  default     = "cloudvm"
+  default     = "cloudvm1"
 }
 variable "machine" {
   type        = string
@@ -16,5 +16,5 @@ variable "machine" {
 }
 variable "name" {
   type        = string
-  default     = "cloudvm"
+  default     = "cloudvm1"
 }

@@ -1,18 +1,18 @@
 # This code is compatible with Terraform 4.25.0 and versions that are backwards compatible to 4.25.0.
 # For information about validating this Terraform code, see https://developer.hashicorp.com/terraform/tutorials/gcp-get-started/google-cloud-platform-build#format-and-validate-the-configuration
 
-resource "google_compute_instance" "cloudvm" {
+resource "google_compute_instance" "cloudvm1" {
   attached_disk {
     device_name = var.disk
     mode        = "READ_WRITE"
-    source      = "projects/groovy-karma-388506/zones/us-central1-a/disks/disk-2"
+    source      = "projects/groovy-karma-388506/zones/us-central1-a/disks/disk-1"
     }
   boot_disk {
     auto_delete = true
     device_name = var.device_name
 
     initialize_params {
-      image = "projects/groovy-karma-388506/global/images/cloudvm"
+      image = "projects/groovy-karma-388506/global/images/cloudvm1"
       size  = 50
       type  = "pd-balanced"
     }

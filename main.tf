@@ -2,6 +2,11 @@
 # For information about validating this Terraform code, see https://developer.hashicorp.com/terraform/tutorials/gcp-get-started/google-cloud-platform-build#format-and-validate-the-configuration
 
 resource "google_compute_instance" "cloudvm" {
+  attached_disk {
+    device_name = var.disk
+    mode        = "READ_WRITE"
+    source      = "projects/groovy-karma-388506/zones/us-central1-a/disks/disk-2"
+    }
   boot_disk {
     auto_delete = true
     device_name = var.device_name

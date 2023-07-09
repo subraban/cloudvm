@@ -4,7 +4,7 @@
 resource "google_compute_instance" "cloudvm" {
   boot_disk {
     auto_delete = true
-    device_name = "cloudvm"
+    device_name = var.device_name
 
     initialize_params {
       image = "projects/groovy-karma-388506/global/images/cloudvm"
@@ -24,7 +24,7 @@ resource "google_compute_instance" "cloudvm" {
   }
 
   machine_type = "e2-medium"
-  name         = "cloudvm"
+  name         = var.name
 
   network_interface {
     access_config {

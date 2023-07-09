@@ -3,14 +3,14 @@
 
 resource "google_compute_instance" "cloudvm" {
   attached_disk {
-    device_name = "disk-2"
+    device_name = var.disk_name
     mode        = "READ_WRITE"
     source      = "projects/groovy-karma-388506/zones/us-central1-a/disks/disk-2"
   }
 
   boot_disk {
     auto_delete = true
-    device_name = "sqlserver"
+    device_name = var.device_name
 
     initialize_params {
       image = "projects/windows-cloud/global/images/windows-server-2022-dc-v20230510"
@@ -29,7 +29,7 @@ resource "google_compute_instance" "cloudvm" {
     goog-ec-src = "vm_add-tf"
   }
 
-  machine_type = "n2-highmem-4"
+  machine_type = var.machine
 
   metadata = {
     enable-windows-ssh = "TRUE"
@@ -37,7 +37,7 @@ resource "google_compute_instance" "cloudvm" {
     windows-keys       = "{\"expireOn\":\"2023-07-08T07:34:29.944458Z\",\"userName\":\"user1\",\"email\":\"subrahmanyam113@gmail.com\",\"modulus\":\"iUQ4REttzGfqOQtfLc+vvqgJAlFymBfGX4IakyhRxyhJKynmXuhRENu9gFDjoZFC8N23m7MPpvB/6jhDujcvwdz08pCutDdCOpGRgWtJMzN4CD1DfNxMv8ZeLKQYGeAsoYgyo60IesJDB7PxdxRED8zG9wIpMQmvUL3/uPdAoYd1x6XHXzQEck54H+dQL+r3tJSEpufUIyinakMK5R31YYO8Nx94in3D1qTeSyDovHJvdbSB4VOoO0JN+hHzWr0oh6lAvLpwJpl+tjHIshlS4Hexspu54fb1YXNT+iPpX2TpoPcurkNboFWKNmliPgVH9qHyNC7cqy+DlkTP/9Mo0w==\",\"exponent\":\"AQAB\"}"
   }
 
-  name = "cloudvm"
+  name = var.name
 
   network_interface {
     access_config {
